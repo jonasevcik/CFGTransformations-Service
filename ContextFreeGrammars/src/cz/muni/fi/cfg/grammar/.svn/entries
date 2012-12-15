@@ -1,0 +1,16 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/ContextFreeGrammars/src/cz/muni/fi/cfg/grammar
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+

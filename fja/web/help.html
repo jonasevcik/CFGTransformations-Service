@@ -1,0 +1,91 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <title>Napoveda pro fja aplikaci</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="Author" content="Bronislav Houdek">
+  <link rel="stylesheet" type="text/css" href="/fja/css/help.css">
+</head>
+<body>
+<a name="enterstring"><h1>Popis vstupniho retezce pro odpovednik</h1></a>
+<p>
+  Retezec generovany pro odpovednik a akceptovatelny touto aplikaci ma tuto strukturu:<br>
+  "<span>UCI-STU:jazyk spravne odpovedi</span>" kde:<br>
+  1. "<span>UCI</span>" - typ modelu ucitele (DFA,EFA,GRA,REG)<br>
+  2. "<span>-</span>" - nasleduje pomlcka<br>
+  3. "<span>STU</span>" - pozadovany ukol po studentovi (MIN,TOT,NFA,...), pokud nezalezi na typu odpovedi studenta, muzeme zvolit ALL<br>
+  4. "<span>:</span>" - nasleduje dvojtecka<br>
+  5. jazyk spravne odpovedi - za dvojteckou nasleduje jazyk odpovedi, s kterou se porovnava model studenta, zda jsou modely jazykove ekvivalentni.<br>
+  <br>
+  napr.: "<span>REG-MIN:(a+b)^*</span>" - tzn. jako odpoved studenta ucitel pozaduje minimalni automat jazykove ekvivalentni reg.vyrazu "<span>(a+b)^*</span>"<br>
+</p>
+<p>
+  Pro co nejrychlejsi vyhodnoceni odpovednikem je vhodne zadavat jazyk odpovedi(model ucitele) v jiz minimalizovanem DFA. 
+  Proto je vhode vyuzit moznosti teto aplikace - vygenerovani spravneho retezce pro odpovednik.
+  Vygenerovany retezec je jiz s prevednym modelem ucitele na minimalizovany DFA.<br>
+  Dale se pred tento retezec pro zacleneni do odpovedniku musi predradit "<span>b:</span>".
+  Coz rika ISu v odpovedniku, ze se ma dany retezec poslat s odpovedi studenta pro vyhodnoceni prave na tuto sluzbu.
+</p>
+
+<h1>Popis formalismu</h1>
+<ul>
+  <li><a href="help/fa.html#fa">DFA, NFA a EFA - (ne)deterministicky konecny automat (s ep.kroky)</a>
+  <li><a href="help/fa.html#tot">TOT - totalni konecny automat</a>
+  <li><a href="help/fa.html#min">MIN - minimalni konecny automat</a>
+  <li><a href="help/fa.html#toc">TOC - totalni kanonicky konecny automat</a>
+  <li><a href="help/fa.html#mic">MIC - minimalni kanonicky konecny automat</a>
+  <li><a href="help/fa.html#can">CAN - kanonicky konecny automat</a>
+  <li><a href="help/gra.html#gra">GRA - regularni gramatika</a>
+  <li><a href="help/re.html#reg">REG - regularni vyraz</a>
+  <li><a href="#all">ALL - libovolny formalismus</a>
+  <li><a href="help/examples.html">Priklady formalismu</a>
+</ul>
+
+<a name="all"><h1>ALL - libovolny formalismus</h1></a>
+<p>
+  Jedna se o mod, kterym davame najevo, ze nezalezi na typu formalismu, ktery bude
+  vlozen jako odpoved studenta. Tzn. vyhodnoti se, zda byl zadan DFA,EFA,GRA nebo REG
+  a pokud je tato odpoved rozeznana jako jeden formalismu, tak se provede otestovani,
+  zda je dany model jazykove ekvivalentni pozadavku ucitele.<br>
+  Muze se stat, ze nektery model bude akceptovan jako REG, i kdyz byl zamyslen
+  DFA,EFA nebo GRA, jen byla syntakticka chyba v danych modelech, treba jen drobnost.
+  Upozornuji na to, aby pak nedoslo k nedorozumeni, proc to bylo vyhodnoceno jako
+  REG. Nektere DFA,EFA a GRA totiz mohou byt platnymi REG. Napr.<br>
+  <span>(A,{)=A</span> - je neplatny DFA - { je specialni znak a musi byt uvedeno \{,
+  ale jako REG je to akceptovatelne.<br>
+  <span>S-&gt; \e A-&gt; aS</span> - je neplatna GRA, protoze pravidla musi byt oddeleny
+  novym radkem nebo carkou, ovsem jako REG je to akceptovatelne.
+</p>
+
+<a name="report"><h1>Chybova hlaseni</h1></a>
+<a name="simple"><h2>Strohy mod</h2></a>
+<p>
+  vrati true/nebo false<br>
+  true - v pripade, ze model studenta vyhovuje vsem podminkam a je ekvivalentni predloze<br>
+  false - ve vsech ostatnich pripadech
+</p>
+<a name="verbose"><h2>Lehce ukecany mod</h2></a>
+<p>
+  Krom true/false vypise, kterym podminkam zadany model studenta vyhovuje/nevyhovuje
+  a zda je ekvivalentni predloze ci neni.<br>
+  Dale vypise jak predlohu tak model studenta - v pripade chyb v syntaxi, vypise chyby.
+  Nasledne zadane modely vypise prevedeny na EFA - v pripade GRA nebo REG, nakonec
+  jsou modely vypsany v kanonickem minimalizovanem tvaru.
+</p>
+<a name="detail"><h2>Detailni mod</h2></a>
+<p>
+  Vypise to stejne jako mod "verbose" a k tomu navic v pripade prevodu z EFA prevod na NFA
+  a DFA ktere vznikne po prevodu z NFA.
+</p>
+
+<a name="convert"><h1>Prevodnik modelu na</h1></a>
+<p>
+  Prevadi zadany model (reg.vyraz, reg.gramatiku, NFA s epsilon kroky a DFA) na 
+  NFA s epsilon kroky, prip. bez epsilon kroku (EFA,NFA) , dale na klasicky DFA
+  prip. kanonicky nebo minimalizovany (CAN, MIN, MIC).
+  <br>
+  Prevadene automaty skonci vzdy v "pozici" do jake byly pri prevodu z daneho modelu
+  prevedeny.
+</p>    
+</body>
+</html>

@@ -1,0 +1,30 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/fja/web/scripts
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+cfgparser.js
+file
+
+
+
+add
+
+util.js
+file
+
+
+
+add
+

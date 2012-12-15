@@ -1,0 +1,51 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/fja
+https://arran.fi.muni.cz/svn/fja
+
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+test
+dir
+
+
+
+add
+
+nbproject
+dir
+
+
+
+add
+
+src
+dir
+
+
+
+add
+
+web
+dir
+
+
+
+add
+
+build.xml
+file
+
+
+
+add
+

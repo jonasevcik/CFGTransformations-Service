@@ -1,0 +1,51 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/fja/src/java/cz/muni/fi/fja/deposit
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+TaskListImpl.java
+file
+
+
+
+add
+
+Task.java
+file
+
+
+
+add
+
+DepositorListImpl.java
+file
+
+
+
+add
+
+DepositorException.java
+file
+
+
+
+add
+
+Depositor.java
+file
+
+
+
+add
+

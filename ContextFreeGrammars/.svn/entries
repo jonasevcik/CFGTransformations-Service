@@ -1,0 +1,23 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/ContextFreeGrammars
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+src
+dir
+
+
+
+add
+

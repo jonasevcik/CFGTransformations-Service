@@ -1,0 +1,121 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/fja/web
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+resultconversion.jsp
+file
+
+
+
+add
+
+news.html
+file
+
+
+
+add
+
+indexcfg.jsp
+file
+
+
+
+add
+
+admin.jsp
+file
+
+
+
+add
+
+scripts
+dir
+
+
+
+add
+
+WEB-INF
+dir
+
+
+
+add
+
+css
+dir
+
+
+
+add
+
+help
+dir
+
+
+
+add
+
+help.html
+file
+
+
+
+add
+
+META-INF
+dir
+
+
+
+add
+
+style
+dir
+
+
+
+add
+
+resultevaluation.jsp
+file
+
+
+
+add
+
+index.jsp
+file
+
+
+
+add
+
+list.jsp
+file
+
+
+
+add
+
+helpcfg.html
+file
+
+
+
+add
+

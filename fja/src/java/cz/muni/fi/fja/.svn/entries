@@ -1,0 +1,30 @@
+9
+
+dir
+0
+https://arran.fi.muni.cz/svn/fja/fja/src/java/cz/muni/fi/fja
+https://arran.fi.muni.cz/svn/fja
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+servlet
+dir
+
+
+
+add
+
+deposit
+dir
+
+
+
+add
+

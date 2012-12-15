@@ -1,0 +1,10 @@
+<br>
+Mod odpovedi: 
+<select name="mod">
+    <option value="simple">true/false</option>
+    <option value="verbose" selected="selected">standardni</option>
+    <option value="details">detailni</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;
+<input value="Vyhodnotit" type="submit">
+<input value="Reset" type="reset">
+<input type="checkbox" name="gen" value="yes"> - <label for="gen">vygenerovat retezec pro odpovednik</label>
